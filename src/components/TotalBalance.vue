@@ -1,31 +1,29 @@
 <template>
-  <div :class="['total-value', totalColor]">Balance : {{ total }}</div>
+  <div :class="['total-value', totalColor]">
+    Balance : {{ getTotalBalance }}
+  </div>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  name: 'TotalBalance',
+  name: "TotalBalance",
   data: () => ({
-    positive: 'positive-balance',
-    negative: 'negative-balance',
-    neutral: 'neutral-balance',
+    positive: "positive-balance",
+    negative: "negative-balance",
+    neutral: "neutral-balance",
   }),
   computed: {
     totalColor() {
-      if (this.total > 0) {
+      if (this.getTotalBalance > 0) {
         return this.positive;
-      } else if (this.total < 0) {
+      } else if (this.getTotalBalance < 0) {
         return this.negative;
       } else {
         return this.neutral;
       }
     },
-  },
-  props: {
-    total: {
-      type: Number,
-      default: 0,
-    },
+    ...mapGetters(["getTotalBalance"]),
   },
 };
 </script>

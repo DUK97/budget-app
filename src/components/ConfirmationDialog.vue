@@ -1,6 +1,6 @@
 <template>
   <el-dialog :visible.sync="dialogVisible" width="30%">
-    <h3 slot="title">{{ header }}</h3>
+    <h3 class="modal__title" slot="title">{{ header }}</h3>
     <span class="modal-body">{{ body }}</span>
     <span slot="footer" class="dialog-footer">
       <el-button @click="closeModal">Cancel</el-button>
@@ -42,14 +42,3 @@ export default {
 };
 </script>
 
-<style scoped>
-.modal-body {
-  font-size: 24px;
-}
-.modal-bold {
-  font-weight: 700;
-}
-.modal-body {
-  word-break: break-word;
-}
-</style>

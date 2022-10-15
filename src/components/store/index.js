@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import budget from "./modules/budget";
+import transactions from "./modules/transactions";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  modules: { budget },
+  modules: { transactions },
 });

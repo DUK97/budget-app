@@ -1,0 +1,27 @@
+.arrow {
+  font-size: 24px;
+  font-family: element-icons !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.arrow--down {
+  color: #f56c6c;
+  &::before {
+    content: "\e6eb";
+  }
+}
+
+.arrow--up {
+  color: #67c23a;
+  &::before {
+    content: "\e6e6";
+  }
+}

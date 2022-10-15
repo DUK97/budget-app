@@ -1,0 +1,12 @@
+/*========== Transaction Item ==========*/
+.transaction-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.transaction-item__value {
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: 20px;
+}

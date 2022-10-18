@@ -9,8 +9,8 @@
       <TransactionItem
         @deleteTransactionItem="onDeleteTransactionItem"
         v-else
-        v-for="(transaction, index) in currentExpenceList"
-        :key="index"
+        v-for="transaction in currentExpenceList"
+        :key="transaction.id"
         :transaction="transaction"
       />
     </ElCard>
@@ -20,7 +20,7 @@
 <script>
 import TransactionItem from "./TransactionItem.vue";
 import DropdownList from "./DropdownList";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 import { EventBus } from "./plugins/EventBus";
 
 export default {
@@ -34,7 +34,7 @@ export default {
   }),
   computed: {
     isEmpty() {
-      return !this.currentExpenceList.length;
+      return this.currentExpenceList.length === 0;
     },
     ...mapGetters({
       getTransactions: "getTransactionsList",
@@ -56,9 +56,8 @@ export default {
     },
   },
   methods: {
-    ...mapActions({ deleteItem: "deleteTransactionItem" }),
     onDeleteTransactionItem(id) {
-      this.deleteItem(id);
+      this.$store.dispatch("deleteTransactionItem", id);
     },
     showIncomeOnly() {
       this.currentList = this.incomeList;

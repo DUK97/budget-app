@@ -10,13 +10,13 @@ export default {
         id: 1,
       },
       {
-        type: "OUTCOME",
+        type: "EXPENCE",
         value: -50,
         comment: "some comment",
         id: 2,
       },
       {
-        type: "OUTCOME",
+        type: "EXPENCE",
         value: -50,
         comment: "some comment",
         id: 3,
@@ -29,20 +29,26 @@ export default {
     },
     getCurrentTotalBalance(state) {
       const transactionListArray = state.TransactionsList;
-      let totalBalance = 0;
-      transactionListArray.forEach(({ value }) => (totalBalance += value));
+      const totalBalance = transactionListArray.reduce(
+        (balance, currentTransaction) => balance + currentTransaction.value,
+        0
+      );
       return totalBalance;
     },
   },
   mutations: {
     ADD_TRANSACTION_ITEM(state, transactionItem) {
-      state.TransactionsList.push(transactionItem);
+      const id = Math.random();
+      if (transactionItem.type === "EXPENCE") {
+        transactionItem.value = -transactionItem.value;
+      }
+      state.TransactionsList.push({ ...transactionItem, id });
     },
     DELETE_TRANSACTION_ITEM(state, transactionId) {
       const id = state.TransactionsList.findIndex(
         ({ id }) => id === transactionId
       );
-      Vue.delete(state.TransactionsList,id)
+      Vue.delete(state.TransactionsList, id);
     },
   },
   actions: {

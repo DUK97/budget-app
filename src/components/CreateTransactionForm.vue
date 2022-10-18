@@ -13,7 +13,8 @@
           placeholder="Choose type..."
         >
           <ElOption label="Income" value="INCOME" />
-          <ElOption label="Outcome" value="OUTCOME" />
+          <ElOption label="Expence" value="EXPENCE" />
+
         </ElSelect>
       </ElFormItem>
       <ElFormItem label="Comment" prop="comment">
@@ -32,7 +33,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+
 export default {
   name: "CreateTransactionForm",
   data() {
@@ -91,16 +92,17 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["addTransactionItem"]),
+
     onSubmit() {
       this.$refs.addItemForm.validate((valid) => {
-        if (valid) {
-          if (this.TransactionFormData.type === "EXPENCE") {
-            this.TransactionFormData.value = -this.formData.value;
-          }
-          this.addTransactionItem({ ...this.TransactionFormData });
-          this.$refs.addItemForm.resetFields();
+        if (!valid) {
+          return;
         }
+        this.$store.dispatch("addTransactionItem", {
+          ...this.TransactionFormData,
+        });
+        this.$refs.addItemForm.resetFields();
+
       });
     },
   },

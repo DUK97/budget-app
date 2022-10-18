@@ -53,7 +53,7 @@ export default {
     },
     onConfirm(responce) {
       if (responce) {
-        console.log(this.transaction.id);
+
         this.deleteTransaction(this.transaction.id);
       }
     },

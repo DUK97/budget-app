@@ -1,0 +1,12 @@
+.balance__value {
+  font-size: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 20px;
+}
+.balance__type--positive {
+  color: #67c23a;
+}
+.balance__type--negative {
+  color: #f56c6c;
+}

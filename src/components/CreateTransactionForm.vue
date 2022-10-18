@@ -14,6 +14,7 @@
         >
           <ElOption label="Income" value="INCOME" />
           <ElOption label="Expence" value="EXPENCE" />
+
         </ElSelect>
       </ElFormItem>
       <ElFormItem label="Comment" prop="comment">
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+
 export default {
   name: "CreateTransactionForm",
   data() {
@@ -90,6 +92,7 @@ export default {
     },
   },
   methods: {
+
     onSubmit() {
       this.$refs.addItemForm.validate((valid) => {
         if (!valid) {
@@ -99,6 +102,7 @@ export default {
           ...this.TransactionFormData,
         });
         this.$refs.addItemForm.resetFields();
+
       });
     },
   },

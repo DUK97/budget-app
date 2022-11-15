@@ -9,10 +9,8 @@
       <TransactionItem
         @deleteTransactionItem="onDeleteTransactionItem"
         v-else
-
         v-for="transaction in currentExpenceList"
         :key="transaction.id"
-
         :transaction="transaction"
       />
     </ElCard>
@@ -38,15 +36,13 @@ export default {
   }),
   computed: {
     isEmpty() {
-
       return this.currentExpenceList.length === 0;
-
     },
     ...mapGetters({
       getTransactions: "getTransactionsList",
     }),
     currentExpenceList() {
-      const currentType = this.currentTransactionListType;
+      const currentType = this.currentListType;
       if (currentType === "INCOME") {
         return this.getTransactions.filter((TransactionItem) => {
           return TransactionItem.type === "INCOME";
@@ -62,27 +58,22 @@ export default {
     },
   },
   methods: {
-
     onDeleteTransactionItem(id) {
       this.$store.dispatch("deleteTransactionItem", id);
-
     },
     showIncomeOnly() {
-      this.currentList = this.incomeList;
       this.currentListType = "INCOME";
     },
     showExpencesOnly() {
-      this.currentList = this.outcomeList;
       this.currentListType = "EXPENCE";
     },
     showAll() {
-      this.currentTransactionList = this.getTransactions;
-      this.currentTransactionListType = "ALL";
+      this.currentListType = "ALL";
     },
   },
   mounted() {
     EventBus.$on("showIncome", this.showIncomeOnly);
-    EventBus.$on("showExpences", this.showExpensesOnly);
+    EventBus.$on("showExpences", this.showExpencesOnly);
     EventBus.$on("showAll", this.showAll);
   },
 };

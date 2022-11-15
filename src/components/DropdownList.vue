@@ -9,10 +9,8 @@
     <span class="el-dropdown-link"> Filter</span>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item command="showAll">Show all</el-dropdown-item>
-      <el-dropdown-item command="showOutcome"
-        >Show only outcome</el-dropdown-item
-      >
-      <el-dropdown-item command="showIncome">Show only income</el-dropdown-item>
+      <el-dropdown-item command="showExpences">Show expenses</el-dropdown-item>
+      <el-dropdown-item command="showIncome">Show income</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>

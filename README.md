@@ -11,15 +11,15 @@
 
 ## Технические подробности
 
-Фреймворк: Vue 2.
+- Фреймворк: Vue 2.
 
-Store: [VUEX](https://vuex.vuejs.org/),
+- Store: [VUEX](https://vuex.vuejs.org/),
 
-UI библиотека: [ElementUI](https://element.eleme.io/#/en-US).
+- UI библиотека: [ElementUI](https://element.eleme.io/#/en-US).
 
-Валидация форм: [async-validator](https://github.com/yiminghe/async-validator).
+- Валидация форм: [async-validator](https://github.com/yiminghe/async-validator).
 
-CSS препроцессор: SCSS.
+- CSS препроцессор: SCSS.
 
 
 ## Связь с разработчиком

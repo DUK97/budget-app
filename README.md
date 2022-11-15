@@ -1,24 +1,28 @@
-# budget-app
+# Budget App
 
-## Project setup
-```
-npm install
-```
+- Приложение: [Budget App](https://duk97.github.io/budget-app/)
+- Разработчик: [DUK97](https://github.com/DUK97)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Описание
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Веб приложение для подсчета бюджета. 
 
-### Lints and fixes files
-```
-npm run lint
-```
+Для реализации был использован JavaScript Фреймворк VUE 2, VUEX store и UI библиотека ElementUI. Валидация формы сделана с помощью валидатора async-validator. EventBus использовался управления состоянием модального окна(Dialog)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Технические подробности
+
+Фреймворк: Vue 2.
+
+Store: [VUEX](https://vuex.vuejs.org/),
+
+UI библиотека: [ElementUI](https://element.eleme.io/#/en-US).
+
+Валидация форм: [async-validator](https://github.com/yiminghe/async-validator).
+
+CSS препроцессор: SCSS.
+
+
+## Связь с разработчиком
+
+- GitHub: [DUK97](https://github.com/DUK97)
+- Почта: [mrduk97@gmail.com](mailto:mrduk97@gmail.com)
